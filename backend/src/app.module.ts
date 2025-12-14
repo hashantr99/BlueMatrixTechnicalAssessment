@@ -4,15 +4,19 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
+import { CategoriesModule } from './categories/categories.module';
+import { PostsModule } from './posts/posts.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
-      isGlobal: true, // Makes the ConfigService available globally
-      envFilePath: '.env', // Specifies the path to the .env file
+      isGlobal: true, // makes the ConfigService available globally
+      envFilePath: '.env', // specifies the path to the .env file
     }),
     AuthModule,
     UsersModule,
+    CategoriesModule,
+    PostsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
