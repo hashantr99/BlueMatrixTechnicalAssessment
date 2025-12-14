@@ -44,11 +44,9 @@ CREATE TABLE Posts (
 
 ## Backend env
 
-# port
+
 PORT=4000
-# JWT Secret for signing tokens
 JWT_SECRET=your-secret-key
-# Database connection details
 DATABASE_HOST=localhost
 DATABASE_PORT=3306
 DATABASE_USERNAME=user
