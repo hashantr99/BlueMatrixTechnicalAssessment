@@ -51,7 +51,7 @@ export class PostsController {
   }
 
   // get post by ID
-  @UseGuards(JwtAuthGuard)
+  //@UseGuards(JwtAuthGuard)
   @Get(':id')
   async getPost(@Param('id') id: number) {
     return this.postsService.getPost(id);

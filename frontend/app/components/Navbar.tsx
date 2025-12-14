@@ -66,6 +66,14 @@ const Navbar = () => {
               </button>
             </>
           )}
+          <button
+  className="text-blue-600 underline"
+  type="button"
+  onClick={() => router.push('/register')}
+>
+  Create an account
+</button>
+
         </div>
       </div>
     </nav>

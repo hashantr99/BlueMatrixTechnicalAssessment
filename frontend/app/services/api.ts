@@ -108,3 +108,8 @@ export const updateCategory = async (id: number, name: string) => {
   const response = await api.put(`/categories/${id}`, { name });
   return response.data;
 };
+
+export const registerUser = async (email: string, password: string) => {
+  const response = await api.post('/users/register', { email, password });
+  return response.data;
+};
