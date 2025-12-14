@@ -8,6 +8,7 @@ import {
   Put,
   UseGuards,
   Query,
+  Request,
 } from '@nestjs/common';
 import { PostsService } from './posts.service';
 import { JwtAuthGuard } from 'src/auth/jwt.guard';
@@ -29,13 +30,16 @@ export class PostsController {
       userId: number;
       status?: string; // defaults to 'Draft' if not provided
     },
+    @Request() req,
   ) {
+    const userId = req.user.user_id;
     return this.postsService.createPost(
       body.title,
       body.content,
       body.imageUrl,
       body.categoryId,
-      body.userId,
+      //body.userId,
+      userId,
       body.status || 'Draft', // set default status if not provided
     );
   }
